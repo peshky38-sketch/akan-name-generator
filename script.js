@@ -31,3 +31,10 @@ document.getElementById("akanForm").addEventListener("submit", function(e) {
     );
 
  if (d < 0) d += 7;
+ let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+    let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+
+    let dayName = days[d];
+    let akanName = gender.value === "male" ? maleNames[d] : femaleNames[d];
