@@ -24,4 +24,5 @@ document.getElementById("akanForm").addEventListener("submit", function(e) {
     let YY = parseInt(year.toString().slice(2));
    
     // Formula
-    let d = Math.floor
+    let d = Math.floor((4 * CC - 2 * CC - 1) +
+        (5 * YY)
