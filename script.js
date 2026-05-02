@@ -22,3 +22,6 @@ document.getElementById("akanForm").addEventListener("submit", function(e) {
     // Split year
     let CC = parseInt(year.toString().slice(0, 2));
     let YY = parseInt(year.toString().slice(2));
+   
+    // Formula
+    let d = Math.floor
