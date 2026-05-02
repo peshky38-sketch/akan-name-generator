@@ -12,3 +12,9 @@ form.addEventListener("submit", function(e) {
         return;
     }
     let date = new Date(dateInput);
+   
+    // Extra validation (real date check)
+    if (isNaN(date.getTime())) {
+        alert("Invalid date entered.");
+        return;
+    }
