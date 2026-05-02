@@ -1,6 +1,9 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    background: linear-gradient(135deg, #ce1126, #fcd116, #006b3f);
+    background-size: 300% 300%;
+    animation: ghanaMove 10s ease infinite;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,21 +12,35 @@ body {
     transition: 0.4s;
 }
 
+/* Smooth moving Ghana flag effect */
+@keyframes ghanaMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
 /* DARK MODE */
 body.dark {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 15px;
     width: 340px;
     text-align: center;
     color: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(252, 209, 22, 0.4);
 }
 
 body.dark .container {
