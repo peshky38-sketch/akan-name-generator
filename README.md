@@ -1,0 +1,46 @@
+# Akan Name Generator
+
+## Project Name
+Akan Name Generator
+
+## Description
+This is a web application that calculates the day of the week a user was born and assigns them an Akan name based on their gender. The application is inspired by Ghanaian culture, where children are given names according to the day they were born.
+
+## Author
+Rachel Angela  
+
+### Author Description
+I am a curious and creative developer who enjoys exploring how code can bring ideas to life. I like building simple but meaningful projects that challenge my thinking and improve my problem-solving skills. Each project I create reflects my journey of learning, growth, and passion for technology.
+
+## Live Site
+https://your-username.github.io/akan-name-generator/
+
+## Setup Instructions
+1. Clone the repository  
+2. Open the project folder  
+3. Open `index.html` in your browser  
+4. Enter your birth date and select gender  
+5. Click "Generate Name"  
+
+## BDD (Behavior Driven Development)
+- User enters a valid birth date → correct day is calculated  
+- User selects gender → correct Akan name is displayed  
+- User submits empty form → alert message is shown  
+- User enters invalid date → error alert is displayed  
+
+## Technologies Used
+- HTML  
+- CSS  
+- JavaScript  
+
+## Contact Information
+Phone: 0781345476  
+Email: peshky38@gmail.com  
+
+## License
+MIT License  
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files to use, copy, modify, and distribute the software without restriction.
+
+## Copyright
+© 2026 Rachel Angela. All Rights Reserved.
