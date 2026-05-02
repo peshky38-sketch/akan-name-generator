@@ -38,3 +38,6 @@ document.getElementById("akanForm").addEventListener("submit", function(e) {
 
     let dayName = days[d];
     let akanName = gender.value === "male" ? maleNames[d] : femaleNames[d];
+    
+    document.getElementById("result").innerText =
+        `You were born on ${dayName}. Your Akan name is ${akanName}.`;
