@@ -1,3 +1,13 @@
 const form = document.getElementById("akanForm");
 const resultDiv = document.getElementById("result");
 const resetBtn = document.getElementById("resetBtn");
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let dateInput = document.getElementById("birthdate").value;
+    let gender = document.querySelector('input[name="gender"]:checked');
+
+    if (!dateInput || !gender) {
+        alert("Please select a valid date and gender.");
+        return;
+    }
