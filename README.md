@@ -13,7 +13,7 @@ Rachel Angela
 I am a passionate and growing web developer with an interest in building interactive and user-friendly web applications. I enjoy working with HTML, CSS, and JavaScript to create practical solutions and improve my programming skills through real-world projects.
 
 ## Live Site
-https://your-username.github.io/akan-name-generator/
+https://peshky38-sketch.github.io/akan-name-generator/
 
 ## Setup Instructions
 1. Clone the repository  
