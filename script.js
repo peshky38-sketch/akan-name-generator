@@ -25,4 +25,6 @@ document.getElementById("akanForm").addEventListener("submit", function(e) {
    
     // Formula
     let d = Math.floor((4 * CC - 2 * CC - 1) +
-        (5 * YY)
+        (5 * YY)+
+        Math.floor((26 * (month + 1)) / 10) +
+        day) % 7
