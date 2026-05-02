@@ -10,7 +10,7 @@ This is a web application that calculates the day of the week a user was born an
 Rachel Angela  
 
 ### Author Description
-I am a curious and creative developer who enjoys exploring how code can bring ideas to life. I like building simple but meaningful projects that challenge my thinking and improve my problem-solving skills. Each project I create reflects my journey of learning, growth, and passion for technology.
+I am a passionate and growing web developer with an interest in building interactive and user-friendly web applications. I enjoy working with HTML, CSS, and JavaScript to create practical solutions and improve my programming skills through real-world projects.
 
 ## Live Site
 https://your-username.github.io/akan-name-generator/
