@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let CC = parseInt(year.toString().slice(0, 2));
         let YY = parseInt(year.toString().slice(2));
 
-        // Correct formula (FIXED)
+        // Formula
         let d = Math.floor(
             ((4 * CC - 2 * CC - 1) +
             (5 * YY) +
@@ -46,11 +46,20 @@ document.addEventListener("DOMContentLoaded", function () {
         let dayName = days[d];
         let akanName = gender.value === "male" ? maleNames[d] : femaleNames[d];
 
-        document.getElementById("result").innerText =
-            `You were born on ${dayName}. Your Akan name is ${akanName}.`;
+        // OUTPUT (FIXED)
+        document.getElementById("result").innerHTML =
+            ` You were born on <strong>${dayName}</strong><br>
+              Your Akan name is <strong>${akanName}</strong>`;
+
+        document.getElementById("result").classList.add("show");
 
         // clear form
         document.getElementById("akanForm").reset();
+    });
+
+    // Theme toggle (clean placement)
+    document.getElementById("toggleTheme").addEventListener("click", function () {
+        document.body.classList.toggle("dark");
     });
 
 });
