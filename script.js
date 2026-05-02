@@ -18,3 +18,14 @@ form.addEventListener("submit", function(e) {
         alert("Invalid date entered.");
         return;
     }
+    
+    let dayIndex = date.getDay(); // 0-6 (Sunday-Saturday)
+
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+    const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+
+    let akanName = gender.value === "male"
+        ? maleNames[dayIndex]
+        : femaleNames[dayIndex];
