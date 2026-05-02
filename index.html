@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akan Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Akan Name Generator</h1>
+    <p class="description">
+        In Ghanaian culture, names are based on the day you were born.
+        Find yours below 
+    </p>
+
+    <form id="akanForm">
+        <input type="date" id="birthdate" required>
+
+        <div class="gender">
+            <label>
+                <input type="radio" name="gender" value="male"> Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female"> Female
+            </label>
+        </div>
+
+        <button type="submit">Generate Name</button>
+        <button type="button" id="resetBtn">Reset</button>
+    </form>
+
+    <div id="result" class="result-card"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
