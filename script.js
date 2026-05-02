@@ -11,3 +11,4 @@ form.addEventListener("submit", function(e) {
         alert("Please select a valid date and gender.");
         return;
     }
+    let date = new Date(dateInput);
