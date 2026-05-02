@@ -28,3 +28,6 @@ document.getElementById("akanForm").addEventListener("submit", function(e) {
         (5 * YY)+
         Math.floor((26 * (month + 1)) / 10) +
         day) % 7
+    );
+
+ if (d < 0) d += 7;
