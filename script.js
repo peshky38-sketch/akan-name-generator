@@ -19,3 +19,6 @@ document.getElementById("akanForm").addEventListener("submit", function(e) {
         alert("Invalid month. Enter between 1 and 12.");
         return;
     }
+    // Split year
+    let CC = parseInt(year.toString().slice(0, 2));
+    let YY = parseInt(year.toString().slice(2));
