@@ -43,4 +43,5 @@ document.getElementById("akanForm").addEventListener("submit", function(e) {
         `You were born on ${dayName}. Your Akan name is ${akanName}.`;
 
     // clear form (portfolio polish)  
- document.getElementById("akanForm")  
+ document.getElementById("akanForm").reset();
+});  
