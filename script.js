@@ -41,3 +41,5 @@ document.getElementById("akanForm").addEventListener("submit", function(e) {
     
     document.getElementById("result").innerText =
         `You were born on ${dayName}. Your Akan name is ${akanName}.`;
+
+    // clear form (portfolio polish)    
