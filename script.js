@@ -24,14 +24,26 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Split year into CC and YY
-        let yearString = year.toString();
+        // Adjust January & February (treat as months 13 & 14 of previous year)
+        let MM = month;
+        let adjustedYear = year;
+
+        if (MM === 1) {
+            MM = 13;
+            adjustedYear -= 1;
+        } else if (MM === 2) {
+            MM = 14;
+            adjustedYear -= 1;
+        }
+
+        // Split adjusted year into century (CC) and year of century (YY)
+        let yearString = adjustedYear.toString();
         let CC = parseInt(yearString.slice(0, 2));
         let YY = parseInt(yearString.slice(2));
-        let MM = month;
         let DD = day;
 
-        // Apply formula correctly (floor EACH division)
+        // Assignment formula:
+        // d = ((CC/4 - 2*CC - 1) + (5*YY/4) + (26*(MM+1)/10) + DD) mod 7
         let term1 = Math.floor(CC / 4) - (2 * CC) - 1;
         let term2 = Math.floor((5 * YY) / 4);
         let term3 = Math.floor((26 * (MM + 1)) / 10);
@@ -41,11 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let d = total % 7;
 
-        // Handle negative modulo
+        // Fix negative modulo result
         if (d < 0) {
             d += 7;
         }
 
+        // Day names and Akan names
         let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
         let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
@@ -54,14 +67,14 @@ document.addEventListener("DOMContentLoaded", function () {
         let dayName = days[d];
         let akanName = gender.value === "male" ? maleNames[d] : femaleNames[d];
 
-        // OUTPUT
+        // Output
         document.getElementById("result").innerHTML =
             `You were born on <strong>${dayName}</strong><br>
              Your Akan name is <strong>${akanName}</strong>`;
 
         document.getElementById("result").classList.add("show");
 
-        // clear form
+        // Reset form
         document.getElementById("akanForm").reset();
     });
 
