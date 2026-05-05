@@ -1,63 +1,73 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-document.getElementById("akanForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+    document.getElementById("akanForm").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    let day = parseInt(document.getElementById("day").value);
-    let month = parseInt(document.getElementById("month").value);
-    let year = parseInt(document.getElementById("year").value);
-    let gender = document.querySelector('input[name="gender"]:checked');
+        let day = parseInt(document.getElementById("day").value);
+        let month = parseInt(document.getElementById("month").value);
+        let year = parseInt(document.getElementById("year").value);
+        let gender = document.querySelector('input[name="gender"]:checked');
 
-    // Validation
-    if (!day || !month || !year || !gender) {
-        alert("Please fill in all fields and select gender.");
-        return;
-    }
+        // Validation
+        if (!day || !month || !year || !gender) {
+            alert("Please fill in all fields and select gender.");
+            return;
+        }
 
-    if (day < 1 || day > 31) {
-        alert("Invalid day. Enter between 1 and 31.");
-        return;
-    }
+        if (day < 1 || day > 31) {
+            alert("Invalid day. Enter between 1 and 31.");
+            return;
+        }
 
-    if (month < 1 || month > 12) {
-        alert("Invalid month. Enter between 1 and 12.");
-        return;
-    }
+        if (month < 1 || month > 12) {
+            alert("Invalid month. Enter between 1 and 12.");
+            return;
+        }
 
-    // Create date object (month is 0-indexed in JS, so subtract 1)
-    let date = new Date(year, month - 1, day);
+        // Split year into CC and YY
+        let yearString = year.toString();
+        let CC = parseInt(yearString.slice(0, 2));
+        let YY = parseInt(yearString.slice(2));
+        let MM = month;
+        let DD = day;
 
-    // Validate the date (catches Feb 30, Apr 31, etc.)
-    if (date.getDate() !== day || date.getMonth() !== month - 1 || date.getFullYear() !== year) {
-        alert("Invalid date. Please check your day, month, and year.");
-        return;
-    }
+        // Apply formula correctly (floor EACH division)
+        let term1 = Math.floor(CC / 4) - (2 * CC) - 1;
+        let term2 = Math.floor((5 * YY) / 4);
+        let term3 = Math.floor((26 * (MM + 1)) / 10);
+        let term4 = DD;
 
-    // Get day of week: 0=Sunday, 1=Monday, ..., 6=Saturday
-    let d = date.getDay();
+        let total = term1 + term2 + term3 + term4;
 
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let d = total % 7;
 
-    let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-    let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+        // Handle negative modulo
+        if (d < 0) {
+            d += 7;
+        }
 
-    let dayName = days[d];
-    let akanName = gender.value === "male" ? maleNames[d] : femaleNames[d];
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    // OUTPUT
-    document.getElementById("result").innerHTML =
-        `You were born on <strong>${dayName}</strong><br>
-         Your Akan name is <strong>${akanName}</strong>`;
+        let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+        let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
-    document.getElementById("result").classList.add("show");
+        let dayName = days[d];
+        let akanName = gender.value === "male" ? maleNames[d] : femaleNames[d];
 
-    // clear form
-    document.getElementById("akanForm").reset();
-});
+        // OUTPUT
+        document.getElementById("result").innerHTML =
+            `You were born on <strong>${dayName}</strong><br>
+             Your Akan name is <strong>${akanName}</strong>`;
 
-// Theme toggle
-document.getElementById("toggleTheme").addEventListener("click", function () {
-    document.body.classList.toggle("dark");
-});
+        document.getElementById("result").classList.add("show");
+
+        // clear form
+        document.getElementById("akanForm").reset();
+    });
+
+    // Theme toggle
+    document.getElementById("toggleTheme").addEventListener("click", function () {
+        document.body.classList.toggle("dark");
+    });
 
 });
